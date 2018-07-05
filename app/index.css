@@ -21,6 +21,7 @@ body {
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .header {
@@ -83,8 +84,17 @@ body {
     width:26%;
 }
 
+.navbar-zip-container > div  {
+    flex-direction: initial ;
+}
+
+.navbar-zip-container > div> input {
+    margin-right: 10px;
+}
+
 .main-form-header {
     justify-content: space-around;
     display: flex;
 }
+
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import FindCountry from './FindCountry';
 
 export default function Nav(){
     return(
@@ -9,20 +9,7 @@ export default function Nav(){
                     <h1 className="header"> Weather App </h1>
                 </div>
                 <div className="navbar-zip-container">
-                    <form  className="main-form-header">
-                        <div>
-                            <input
-                                className="form-control"
-                                type="text"
-                                placeholder="Malaysia"
-                            />
-                        </div>
-                        <div>
-                            <button className="btn btn-success">
-                                Get Weather
-                            </button>
-                        </div>
-                    </form>
+                    <FindCountry/>
                 </div>
             </div>
         </div>

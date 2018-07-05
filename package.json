@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/HtunHtunHtet/react-fundamentals-curriculum#readme",
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-browser-router": "^2.1.2",
     "react-dom": "^16.4.1",

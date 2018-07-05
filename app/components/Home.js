@@ -10,12 +10,12 @@ class Home extends React.Component{
                             <input
                                 className="form-control"
                                 type="text"
-                                placeholder="Singapore"
+                                placeholder="Malaysia"
                             />
                         </div>
                         <div style={{textAlign:'center' , marginBottom: 10, marginTop: 10}}>
                             <button className="btn btn-success">
-                                Get Wather
+                                Get Weather
                             </button>
                         </div>
                     </form>

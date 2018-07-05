@@ -27,6 +27,7 @@ body {
     font-size:45px;
     color:#fff;
     font-weight:100;
+    margin: 0px;
 }
 
 .form-control {
@@ -62,6 +63,7 @@ body {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+    margin-top:5px;
 }
 
 .btn-success {
@@ -69,3 +71,20 @@ body {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    background-color:rgba(252,90,44,.89) ;
+    padding:20px;
+}
+
+.navbar-zip-container {
+    width:26%;
+}
+
+.main-form-header {
+    justify-content: space-around;
+    display: flex;
+}
+

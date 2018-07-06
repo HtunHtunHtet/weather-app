@@ -1,11 +1,13 @@
 import React  from 'react';
+import {getCurrentWeather} from '../utils/api';
+
 class FindCountry extends React.Component {
     state = {
         zipcode:''
     }
 
     handleSubmit = () => {
-        console.log(this.state);
+        getCurrentWeather(this.state.zipcode);
     }
 
     handleChanges = (event) => {

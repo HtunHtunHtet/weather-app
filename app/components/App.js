@@ -1,20 +1,30 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Nav from './Nav';
-import Home from './Home';
+import FindCountry from './FindCountry';
 
 
 class App extends  React.Component {
     render(){
         return(
-            <BrowserRouter>
-                <div className='container'>
-                    <Nav/>
-                    <Switch>
-                        <Route exact path="/" component={Home}/>
-                    </Switch>
+            <div className='container'>
+                <div className="nav-container">
+                    <div>
+                        <h1 className="header"> Weather App </h1>
+                    </div>
+                    <div className="navbar-zip-container">
+                        <FindCountry
+                            handleSubmit={function(){}}
+                            zipcode={123}
+                        />
+                    </div>
                 </div>
-            </BrowserRouter>
+                <div className="home-container" style={{backgroundImage: "url('app/images/pattern.svg')"}}>
+                    <h1 className="header">Enter a City and State</h1>
+                    <FindCountry
+                        handleSubmit={function(){}}
+                        zipcode={123}
+                    />
+                </div>
+            </div>
         )
     }
 }

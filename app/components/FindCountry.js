@@ -1,13 +1,20 @@
 import React  from 'react';
-import {getCurrentWeather} from '../utils/api';
+import api from '../utils/api';
+import PropTypes from 'prop-types';
 
 class FindCountry extends React.Component {
+    static propTypes = {
+        zipcode:PropTypes.string.isRequired
+    }
+
     state = {
         zipcode:''
     }
 
     handleSubmit = () => {
-        getCurrentWeather(this.state.zipcode);
+        console.log(this.state.zipcode);
+        api.getCurrentWeather(this.state.zipcode);
+        api.getFiveDayForcast(this.state.zipcode);
     }
 
     handleChanges = (event) => {
@@ -26,6 +33,7 @@ class FindCountry extends React.Component {
                     type="text"
                     placeholder="Malaysia"
                     onChange={this.handleChanges}
+                    value={this.state.zipcode}
                 />
                 <button className="btn btn-success" onClick={this.handleSubmit}>
                     Get Weather

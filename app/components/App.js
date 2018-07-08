@@ -1,30 +1,28 @@
 import React from 'react';
 import FindCountry from './FindCountry';
-
+import {Route, BrowserRouter} from 'react-router-dom';
+import Nav from './Nav';
+import Forecast from './Forecast';
 
 class App extends  React.Component {
     render(){
         return(
-            <div className='container'>
-                <div className="nav-container">
-                    <div>
-                        <h1 className="header"> Weather App </h1>
-                    </div>
-                    <div className="navbar-zip-container">
-                        <FindCountry
-                            handleSubmit={function(){}}
-                            zipcode={123}
-                        />
-                    </div>
+            <BrowserRouter>
+                <div className='container'>
+                    <Nav/>
+
+                    <Route exact path="/" render={() =>
+                        <div className="home-container" style={{backgroundImage: "url('app/images/pattern.svg')"}}>
+                            <h1 className="header">Enter a City and State</h1>
+                            <FindCountry
+                                handleSubmit={function(){}}
+                                zipcode={123}
+                            />
+                        </div>
+                    }/>
+                    <Route path='/forecast' component={Forecast} />
                 </div>
-                <div className="home-container" style={{backgroundImage: "url('app/images/pattern.svg')"}}>
-                    <h1 className="header">Enter a City and State</h1>
-                    <FindCountry
-                        handleSubmit={function(){}}
-                        zipcode={123}
-                    />
-                </div>
-            </div>
+            </BrowserRouter>
         )
     }
 }

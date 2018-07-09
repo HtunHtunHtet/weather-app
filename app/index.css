@@ -97,4 +97,12 @@ body {
     display: flex;
 }
 
+.forecast-header {
+    font-size:45px;
+    color:#000;
+    font-weight:100;
+    margin: 10px;
+    text-align:center;
+}
+
 

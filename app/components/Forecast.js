@@ -1,11 +1,14 @@
 import React from 'react';
 import queryString from 'query-string';
 import api from '../utils/api';
+import Details from './Details';
 
 class Forecast extends React.Component {
     state= {
         forecastData : [],
-        loading: false
+        loading: false,
+        city: '',
+        list: ''
     }
 
     componentDidMount(){
@@ -15,19 +18,33 @@ class Forecast extends React.Component {
 
     makeRequest =(city) => {
         api.getFiveDayForecast(city).then((response) => {
+            console.log(response);
             this.setState(() =>({
                 forecastData:response,
-                loading: false
+                loading: false,
+                city: response.city,
+                list : response.list
             }))
         })
     }
 
+
+
     render(){
-        const {forecastData,loading} = this.state;
-        console.log(forecastData);
+        const {loading, city, list} = this.state;
+        console.log(list);
         return loading === true
             ? <h1 className='header' > Loading.. </h1>
-            : <div>Forecast Module</div>
+            : <div>
+                    <h2 className='forecast-header'>{city.name}</h2>
+                    <div className="forecast-body">
+                        {list.map((listItem) =>(<Detai
+                                                    key = {listItem}
+                                                    day = {listItem}
+                                                />
+                        ))}
+                    </div>
+              </div>
     }
 }
 

@@ -11,19 +11,17 @@ class Forecast extends React.Component {
     }
 
     componentDidMount(){
-        var city = queryString.parse(this.props.location.search).city;
+        let  city = queryString.parse(this.props.location.search).city;
         this.makeRequest(city);
     }
 
-    makeRequest(city){
-        this.setState(()=>
-            ({
-                loading: true
-            })
-        )
+    makeRequest =(city) => {
+        //set loading false
+        this.setState(()=> ({loading:false}));
+        api.getFiveDayForecast(city).then((response) => {
+            console.log(response)
+        })
 
-        api.getCurrentWeather(city)
-            .then((res) => console.log(res))
     }
 
     render(){

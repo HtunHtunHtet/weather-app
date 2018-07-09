@@ -1,7 +1,7 @@
 import React  from 'react';
 import api from '../utils/api';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import ReactRouter from 'react-router-dom'
 
 class FindCountry extends React.Component {
     static propTypes = {
@@ -13,9 +13,11 @@ class FindCountry extends React.Component {
     }
 
     handleSubmit = () => {
-        console.log(this.state.zipcode);
-        api.getCurrentWeather(this.state.zipcode);
-        api.getFiveDayForcast(this.state.zipcode);
+        //get props
+        this.props.onSubmitZipCode(this.state.zipcode);
+        let test = api.getCurrentWeather(this.state.zipcode);
+        let test2 = api.getFiveDayForcast(this.state.zipcode);
+
     }
 
     handleChanges = (event) => {

@@ -13,11 +13,11 @@ class FindCountry extends React.Component {
     }
 
     handleSubmit = () => {
-        //get props
         this.props.onSubmitZipCode(this.state.zipcode);
-        let test = api.getCurrentWeather(this.state.zipcode);
-        let test2 = api.getFiveDayForcast(this.state.zipcode);
-
+        api.getCurrentWeather(this.state.zipcode)
+            .then((response) => (console.log(response)));
+        api.getFiveDayForecast(this.state.zipcode)
+            .then((response) => (console.log(response)));
     }
 
     handleChanges = (event) => {
@@ -34,7 +34,7 @@ class FindCountry extends React.Component {
                     id='zipcodeInput'
                     className="form-control"
                     type="text"
-                    placeholder="Malaysia"
+                    placeholder="Example: Myanmar"
                     onChange={this.handleChanges}
                     value={this.state.zipcode}
                 />

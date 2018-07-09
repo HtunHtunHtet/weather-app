@@ -2,9 +2,7 @@ import React from 'react';
 import queryString from 'query-string';
 import api from '../utils/api';
 
-
 class Forecast extends React.Component {
-
     state= {
         forecastData : [],
         loading: false

@@ -19,7 +19,7 @@ class Forecast extends React.Component {
         //set loading false
         this.setState(()=> ({loading:false}));
         api.getFiveDayForecast(city).then((response) => {
-            console.log(response)
+            console.log("check response",response)
         })
 
     }

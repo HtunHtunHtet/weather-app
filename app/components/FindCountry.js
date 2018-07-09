@@ -24,7 +24,6 @@ class FindCountry extends React.Component {
         event.preventDefault();
         const value=event.target.value;
         this.setState(() => ({zipcode: value}))
-        console.log(this.state);
     }
     render(){
         const {zipcode} = this.state;

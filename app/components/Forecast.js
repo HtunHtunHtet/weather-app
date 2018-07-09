@@ -9,25 +9,25 @@ class Forecast extends React.Component {
     }
 
     componentDidMount(){
-        let  city = queryString.parse(this.props.location.search).city;
+        let city = queryString.parse(this.props.location.search).city;
         this.makeRequest(city);
     }
 
     makeRequest =(city) => {
-        //set loading false
-        this.setState(()=> ({loading:false}));
         api.getFiveDayForecast(city).then((response) => {
-            console.log("check response",response)
+            this.setState(() =>({
+                forecastData:response,
+                loading: false
+            }))
         })
-
     }
 
     render(){
-        return(
-            <div>
-                <h1>Forecast module</h1>
-            </div>
-        )
+        const {forecastData,loading} = this.state;
+        console.log(forecastData);
+        return loading === true
+            ? <h1 className='header' > Loading.. </h1>
+            : <div>Forecast Module</div>
     }
 }
 

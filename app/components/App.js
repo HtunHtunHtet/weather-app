@@ -1,7 +1,6 @@
 import React from 'react';
 import FindCountry from './FindCountry';
 import {Route, BrowserRouter} from 'react-router-dom';
-import Nav from './Nav';
 import Forecast from './Forecast';
 
 class App extends  React.Component {
@@ -9,7 +8,25 @@ class App extends  React.Component {
         return(
             <BrowserRouter>
                 <div className='container'>
-                    <Nav/>
+                    <Route render = {function(props){
+                            return(
+                                <div className="nav-container">
+                                    <div>
+                                        <h1 className="header"> Weather App </h1>
+                                    </div>
+
+                                    <div className="navbar-zip-container">
+                                        <FindCountry  onSubmitZipCode={(city)=>{props.history.push({
+                                                                                    pathname: '/forecast',
+                                                                                    search: '?city=' + city
+                                                                                })
+                                                                                }
+                                                                        }
+                                                      zipcode={123}/>
+                                    </div>
+                                </div>
+                            )
+                    }} />
                     <Route exact path="/" render={function(props) {
                         return (
                             <div className="home-container" style={{backgroundImage: "url('app/images/pattern.svg')"}}>
@@ -20,8 +37,7 @@ class App extends  React.Component {
                                                                         search: '?city=' + city
                                                                     })
                                                              }}
-                                                zipcode={123}
-                                />
+                                                zipcode={123}/>
                             </div>
                             )
                         }

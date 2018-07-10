@@ -24,9 +24,7 @@ class Forecast extends React.Component {
                 loading: false,
                 city: response.city,
                 list : response.list
-            }))
-
-            console.log("state After Update",this.state);
+            }));
         })
     }
 
@@ -41,7 +39,9 @@ class Forecast extends React.Component {
                     <h2 className='forecast-header'>{city.name}</h2>
                     <div className="forecast-body">
                         {
-                            list.map((items) =>(items.temp))
+                            list.map((items) =>(
+                               <Details itemProps={items}/>
+                            ))
                         }
                     </div>
               </div>

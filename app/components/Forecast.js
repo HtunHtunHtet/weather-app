@@ -6,9 +6,9 @@ import Details from './Details';
 class Forecast extends React.Component {
     state= {
         forecastData : [],
-        loading: false,
-        city: '',
-        list: ''
+        loading: true,
+        city: [],
+        list: []
     }
 
     componentDidMount(){
@@ -25,6 +25,8 @@ class Forecast extends React.Component {
                 city: response.city,
                 list : response.list
             }))
+
+            console.log("state After Update",this.state);
         })
     }
 
@@ -32,17 +34,15 @@ class Forecast extends React.Component {
 
     render(){
         const {loading, city, list} = this.state;
-        console.log(list);
+        console.log("list before return",list);
         return loading === true
             ? <h1 className='header' > Loading.. </h1>
             : <div>
                     <h2 className='forecast-header'>{city.name}</h2>
                     <div className="forecast-body">
-                        {list.map((listItem) =>(<Detai
-                                                    key = {listItem}
-                                                    day = {listItem}
-                                                />
-                        ))}
+                        {
+                            list.map((items) =>(items.temp))
+                        }
                     </div>
               </div>
     }

@@ -28,11 +28,9 @@ class Forecast extends React.Component {
         })
     }
 
-
-
     render(){
         const {loading, city, list} = this.state;
-        console.log("list before return",list);
+        console.log("state before return",this.state);
         return loading === true
             ? <h1 className='header' > Loading.. </h1>
             : <div>
@@ -40,7 +38,12 @@ class Forecast extends React.Component {
                     <div className="forecast-body">
                         {
                             list.map((items) =>(
-                               <Details itemProps={items}/>
+                                <Details itemProps={items} onClick={()=>(
+                                    this.props.history.push({
+                                        pathname: `/dateDetails/${city.name}`,
+                                        state: city.name
+                                    })
+                                )} />
                             ))
                         }
                     </div>

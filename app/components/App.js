@@ -2,7 +2,7 @@ import React from 'react';
 import FindCountry from './FindCountry';
 import {Route, BrowserRouter} from 'react-router-dom';
 import Forecast from './Forecast';
-import Details from './Details';
+import DateDetails from './DateDetails';
 
 class App extends  React.Component {
     render(){
@@ -45,7 +45,7 @@ class App extends  React.Component {
                     }/>
                     <Route path='/forecast' component={Forecast} />
 
-                    <Route path='/details/:city' component={Details} />
+                    <Route path='/dateDetails/:city' component={DateDetails} />
                 </div>
             </BrowserRouter>
         )

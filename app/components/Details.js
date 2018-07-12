@@ -9,8 +9,8 @@ class Details extends React.Component{
         const icon = itemProperties.weather[0].icon;
         const date = getDate(itemProperties.dt);
         return(
-            <div className="detailContainer" onClick={this.props.onClick}>
-               <img src={`app/images/weather-icons/${icon}.svg`} alt='weather-icon'/>
+            <div className="detailContainer" onClick={this.props.onClick} >
+               <img src={`/app/images/weather-icons/${icon}.svg`} alt='weather-icon'/>
                 <p>{date}</p>
             </div>
         )

@@ -32,7 +32,7 @@ class FindCountry extends React.Component {
                     id='zipcodeInput'
                     className="form-control"
                     type="text"
-                    placeholder="Example: Myanmar"
+                    placeholder="Example: Yangon"
                     onChange={this.handleChanges}
                     value={this.state.zipcode}
                 />

@@ -134,3 +134,20 @@ body {
     text-align: center;
 }
 
+.date-detail-container {
+    max-width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.date-detail-container > div {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.date-detail-container > div > img {
+    text-align:center;
+    width:12%;
+}
+

@@ -41,7 +41,7 @@ class Forecast extends React.Component {
                                 <Details itemProps={items} onClick={()=>(
                                     this.props.history.push({
                                         pathname: `/dateDetails/${city.name}`,
-                                        state: city.name
+                                        state: {items}
                                     })
                                 )} />
                             ))

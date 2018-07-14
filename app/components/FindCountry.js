@@ -26,6 +26,7 @@ class FindCountry extends React.Component {
     }
     render(){
         const {zipcode} = this.state;
+        console.log(zipcode);
         return(
             <div className="zip-container"  style={{flexDirection: this.props.direction}}>
                 <input
